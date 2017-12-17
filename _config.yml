@@ -3,24 +3,13 @@
 #
 
 # Name of your site (displayed in the header)
-<<<<<<< HEAD
-name: Your Name
-
-# Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
-
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
-
-=======
 name: Subash Basnet
 
 # Short bio or description (displayed in the header)
-description: A Computer Engineering student
+description: A Computer Engineering Student
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars2.githubusercontent.com/u/14135806?s=400&u=5643666bd5765a760e30bed62dde2050f2e12d1a&v=4
->>>>>>> First commit
 #
 # Flags below are optional
 #
@@ -28,29 +17,16 @@ avatar: https://avatars2.githubusercontent.com/u/14135806?s=400&u=5643666bd5765a
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-<<<<<<< HEAD
-  email:
-  facebook:
-  flickr:
-  github: barryclark/jekyll-now
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: jekyllrb
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-=======
-  email:itssubas@gmail.com
-  facebook:www.facebook.com/subasnet1
+  email: itssubas@gmail.com
+  facebook: www.facebook.com/subasnet1
   flickr:
   github: github.com/itssubas
-  instagram:instagram/itssubas
+  instagram: instagram.com/itssubas
   linkedin:
   pinterest:
   rss: # just type anything here for a working RSS icon
   twitter: twitter.com/itssubas
   stackoverflow: users/7972809/itssubas
->>>>>>> First commit
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
 
@@ -64,11 +40,7 @@ google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-<<<<<<< HEAD
-url:
-=======
-url:itssubas.github.io
->>>>>>> First commit
+url: itssubas.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
