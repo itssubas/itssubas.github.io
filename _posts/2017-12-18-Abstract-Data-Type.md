@@ -3,7 +3,6 @@ layout: post
 title: Understanding Abstract Data Types(ADT)
 ---
 
-#Abstract Data Type(ADT)
 
 Abstract Data Type[(ADT)](https://en.wikipedia.org/wiki/Abstract_data_type) refers to the basic mathematical concept that defines the data type. So, what is data type?
 [Wikipedia](https://en.wikipedia.org/wiki/Data_type) defination for data type is, "A data type or simply type is a classification of data which tells the compiler or interpreter how the programmer intends to use the data." Two things appears while defining data type, collection of values and a set of operations on those values. Actual hardware or software implementation of the data types are completely dependent to the platform where it is implemented.(Different programming languages have their own data types and their operations)
