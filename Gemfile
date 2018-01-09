@@ -1,2 +1,2 @@
-gem "modernist"
-source 'https://rubygems.org'
+gem "jekyll-theme-minimal"
+source "https://rubygems.org"
