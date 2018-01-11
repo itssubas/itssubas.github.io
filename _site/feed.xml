@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-11T22:59:12+05:45</updated><id>http://localhost:4000/</id><title type="html">itssubas.github.io</title><entry><title type="html">Installing GNU/Linux on Macbook!</title><link href="http://localhost:4000/Dual-boot-on-mac/" rel="alternate" type="text/html" title="Installing GNU/Linux on Macbook!" /><published>2018-01-11T00:00:00+05:45</published><updated>2018-01-11T00:00:00+05:45</updated><id>http://localhost:4000/Dual-boot-on-mac</id><content type="html" xml:base="http://localhost:4000/Dual-boot-on-mac/">&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This article is about setting up GNU/Linux based operating system like Ubuntu, Kali Linux, ParrotSec OS, etc in your Macbook along with your mac’s macOS. If you are GNU/Linux fan and have no idea about how to setup in your Macbook, this article might be helpful.&lt;/p&gt;
+
+&lt;p&gt;I’ll be sharing my own experience of dual-booting different Debian-based GNU/Linux distribution on macbook. (I’ve &lt;code class=&quot;highlighter-rouge&quot;&gt;MacBook Air 13-inch, Early 2015, 1.6 GHz Intel Core i5&lt;/code&gt; and I’ve tried &lt;code class=&quot;highlighter-rouge&quot;&gt;Ubuntu, Linux Mint, Kali Linux, Debian and Parrot Security OS&lt;/code&gt; on my mac since years.)&lt;/p&gt;
+
+&lt;h3 id=&quot;procedure&quot;&gt;Procedure&lt;/h3&gt;
+&lt;h4 id=&quot;1-create-a-new-partition-for-gnulinux&quot;&gt;1. Create a new partition for GNU/Linux&lt;/h4&gt;
+&lt;p&gt;You need a new partition to install another Operating System. There is a program called &lt;code class=&quot;highlighter-rouge&quot;&gt;Disk Utility&lt;/code&gt; in MacOS. Create a new partition and format it in anything like &lt;code class=&quot;highlighter-rouge&quot;&gt;xFAT&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;NTFS&lt;/code&gt; or anything for now, of size as your choice (Mimimum disk space required for Ubuntu is 5GB).
+&lt;img src=&quot;/assets/disk-partitions.png&quot; alt=&quot;My partitions&quot; /&gt;
+&lt;em&gt;In my case, I’ve created a &lt;code class=&quot;highlighter-rouge&quot;&gt;disk0s4&lt;/code&gt; of size 38.6GB on my 128GB SSD.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-create-another-partition-for-linux-swap-area&quot;&gt;2. Create another partition for Linux Swap Area&lt;/h4&gt;
+&lt;p&gt;So, what is swap area?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Swap Area is just fake RAM that lives on your hard drive. It is much slower than actual RAM, but is necessary in many cases to keep a computer running normally. A good rule of thumb is to have as much swap space as you do normal RAM. Learn more about swap area &lt;a href=&quot;https://askubuntu.com/questions/508870/what-is-a-swap-area&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Create another partition for swap area. Size may be same as that of your RAM according to some &lt;a href=&quot;https://help.ubuntu.com/community/SwapFaq&quot;&gt;source&lt;/a&gt;.
+&lt;em&gt;In my case, it is &lt;code class=&quot;highlighter-rouge&quot;&gt;2.5GB&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;3-create-a-bootable-device&quot;&gt;3. Create a Bootable device&lt;/h4&gt;
+&lt;p&gt;Bootable device can be any device like CD-ROM or USB.&lt;/p&gt;
+
+&lt;p&gt;Download the iso image of any GNU/Linux distribution of your choice (For example &lt;a href=&quot;https://www.ubuntu.com/download&quot;&gt;Ubuntu&lt;/a&gt;, &lt;a href=&quot;https://www.parrotsec.org/download.fx&quot;&gt;ParrotSec OS&lt;/a&gt;). Create a bootable device (may be pendrive) using programs like &lt;a href=&quot;https://etcher.io/&quot;&gt;Etcher&lt;/a&gt;, &lt;a href=&quot;https://unetbootin.github.io/&quot;&gt;Unetbootin&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Dd_(Unix)&quot;&gt;dd&lt;/a&gt; etc.&lt;/p&gt;
+
+&lt;h4 id=&quot;4-time-to-kick-start&quot;&gt;4. Time to kick-start!&lt;/h4&gt;
+
+&lt;p&gt;After you’re done with creating bootable device, restart your MacOS and keep holding &lt;code class=&quot;highlighter-rouge&quot;&gt;alt&lt;/code&gt;(option) key. You’ll get something like this (shown in figure below) if you have made bootable device correctly. 
+&lt;img src=&quot;/assets/boot-options.jpg&quot; alt=&quot;Boot Option&quot; /&gt;
+&lt;em&gt;Here, &lt;code class=&quot;highlighter-rouge&quot;&gt;Untitled&lt;/code&gt; is my Mac’s default SSD and &lt;code class=&quot;highlighter-rouge&quot;&gt;EFI Boot&lt;/code&gt; is bootable pendrive.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Follow the installation options as per GNU/Linux distribution of your choice and when there appears options like &lt;code class=&quot;highlighter-rouge&quot;&gt;choose the installation disk&lt;/code&gt;, you need to be more alert. Select options like &lt;code class=&quot;highlighter-rouge&quot;&gt;something else&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;manually choose the disk&lt;/code&gt; and install GNU/Linux carefully on the partition you’ve created earlier. Also don’t forget to assign &lt;code class=&quot;highlighter-rouge&quot;&gt;swap area&lt;/code&gt;to the latter partition. Go through each steps carefully until you get message like &lt;code class=&quot;highlighter-rouge&quot;&gt;installation successfully completed&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;5-reboot&quot;&gt;5. Reboot&lt;/h4&gt;
+&lt;p&gt;After completion of installation, you need to reboot your device. When you reboot, you may directly reach to your newly installed GNU/Linux OS but don’t worry. We need some program like &lt;a href=&quot;https://en.wikipedia.org/wiki/REFInd&quot;&gt;rEFind&lt;/a&gt; that displays the boot menu during startup.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To boot your MacOS, keep holding &lt;code class=&quot;highlighter-rouge&quot;&gt;alt&lt;/code&gt;(option) key during power on (start up). Select your Mac’s default SSD ( in my case, it is &lt;code class=&quot;highlighter-rouge&quot;&gt;Untitled&lt;/code&gt; is shown in figure above).&lt;/li&gt;
+  &lt;li&gt;In your MacOS, install rEFind &lt;a href=&quot;https://sourceforge.net/projects/refind/&quot;&gt;from here&lt;/a&gt;.
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Installation is pretty simple. Unzip the rEFind file you downloaded, go to the extracted folder, you will find a file named &lt;code class=&quot;highlighter-rouge&quot;&gt;refind-install&lt;/code&gt;.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Drag that file(&lt;code class=&quot;highlighter-rouge&quot;&gt;refind-install&lt;/code&gt;) into your &lt;code class=&quot;highlighter-rouge&quot;&gt;Terminal&lt;/code&gt; and press &lt;code class=&quot;highlighter-rouge&quot;&gt;Enter&lt;/code&gt;.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Enter your user password when needed and then you’re done with rEFind installation.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;After this, when you restart you MacOS, you’ll get multiple menus for your multiple OS.&lt;/li&gt;
+  &lt;li&gt;Navigate the OS of your choice and Enjoy!&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="GNU/Linux," /><category term="Macbook," /><category term="Dual" /><category term="boot" /><summary type="html">Introduction This article is about setting up GNU/Linux based operating system like Ubuntu, Kali Linux, ParrotSec OS, etc in your Macbook along with your mac’s macOS. If you are GNU/Linux fan and have no idea about how to setup in your Macbook, this article might be helpful.</summary></entry><entry><title type="html">Understanding Abstract Data Types(ADT)</title><link href="http://localhost:4000/Abstract-Data-Type/" rel="alternate" type="text/html" title="Understanding Abstract Data Types(ADT)" /><published>2017-12-18T00:00:00+05:45</published><updated>2017-12-18T00:00:00+05:45</updated><id>http://localhost:4000/Abstract-Data-Type</id><content type="html" xml:base="http://localhost:4000/Abstract-Data-Type/">&lt;p&gt;Abstract Data Type&lt;a href=&quot;https://en.wikipedia.org/wiki/Abstract_data_type&quot;&gt;(ADT)&lt;/a&gt; refers to the basic mathematical concept that defines the data type. So, what is data type?
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Data_type&quot;&gt;Wikipedia&lt;/a&gt; defination for data type is, “A data type or simply type is a classification of data which tells the compiler or interpreter how the programmer intends to use the data.” Two things appears while defining data type, collection of values and a set of operations on those values. Actual hardware or software implementation of the data types are completely dependent to the platform where it is implemented.(Different programming languages have their own data types and their operations)&lt;/p&gt;
+
+&lt;p&gt;So, while defining ADT, we don’t really care about the space or time efficiency. Similar to the data types. In facts, data types are practical things whereas ADT are just the theoretical concepts used in the design and analysis of the algorithms, data structures like Stack, Queue, Graph, linked lists etc.&lt;/p&gt;
+
+&lt;p&gt;Data types are specialized whereas ADTs are generalized and theoretical. The main purpose for ADT is to encapsulate the implementation details(may be hardware or software) so that programmer only need to know about the available instructions and method to use them.&lt;/p&gt;
+
+&lt;p&gt;Lets consider the data type Integer. It contains all the counting numbers(positive numbers like 1, 2, 3, 4…), their additive inverses(negative numbers like -1, -2, -3,…) as well as zero. The operations among the integer may be addition, subtraction, multiplication etc. So we can call integer as an ADT.&lt;/p&gt;
+
+&lt;p&gt;Similarly, there can be a &lt;a href=&quot;https://en.wikipedia.org/wiki/Rational_number&quot;&gt;rational numbers&lt;/a&gt;(numbers that can be expressed as quotient of two integers). So, there may be certain operations among rational numbers like in integers. The values and their operations in integers are different that that of rational numbers. This can also be considered as an ADT.&lt;/p&gt;</content><author><name></name></author><summary type="html">Abstract Data Type(ADT) refers to the basic mathematical concept that defines the data type. So, what is data type? Wikipedia defination for data type is, “A data type or simply type is a classification of data which tells the compiler or interpreter how the programmer intends to use the data.” Two things appears while defining data type, collection of values and a set of operations on those values. Actual hardware or software implementation of the data types are completely dependent to the platform where it is implemented.(Different programming languages have their own data types and their operations)</summary></entry></feed>

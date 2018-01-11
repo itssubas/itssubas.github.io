@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Installing GNU/Linux on Macbook! – Subash Basnet's Blog – </title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="Introduction
+This article is about setting up GNU/Linux based operating system like Ubuntu, Kali Linux, ParrotSec OS, etc in your Macbook along with your mac’s macOS. If you are GNU/Linux fan and have no idea about how to setup in your Macbook, this article might be helpful.
+
+" />
+    <meta property="og:description" content="Introduction
+This article is about setting up GNU/Linux based operating system like Ubuntu, Kali Linux, ParrotSec OS, etc in your Macbook along with your mac’s macOS. If you are GNU/Linux fan and have no idea about how to setup in your Macbook, this article might be helpful.
+
+" />
+    
+    <meta name="author" content="Subash Basnet's Blog" />
+
+    
+    <meta property="og:title" content="Installing GNU/Linux on Macbook!" />
+    <meta property="twitter:title" content="Installing GNU/Linux on Macbook!" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Subash Basnet's Blog - " href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://avatars2.githubusercontent.com/u/14135806?s=400&u=5643666bd5765a760e30bed62dde2050f2e12d1a&v=4" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Subash Basnet's Blog</a></h1>
+            <p class="site-description"></p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Installing GNU/Linux on Macbook!</h1>
+
+  <div class="entry">
+    <h3 id="introduction">Introduction</h3>
+<p>This article is about setting up GNU/Linux based operating system like Ubuntu, Kali Linux, ParrotSec OS, etc in your Macbook along with your mac’s macOS. If you are GNU/Linux fan and have no idea about how to setup in your Macbook, this article might be helpful.</p>
+
+<p>I’ll be sharing my own experience of dual-booting different Debian-based GNU/Linux distribution on macbook. (I’ve <code class="highlighter-rouge">MacBook Air 13-inch, Early 2015, 1.6 GHz Intel Core i5</code> and I’ve tried <code class="highlighter-rouge">Ubuntu, Linux Mint, Kali Linux, Debian and Parrot Security OS</code> on my mac since years.)</p>
+
+<h3 id="procedure">Procedure</h3>
+<h4 id="1-create-a-new-partition-for-gnulinux">1. Create a new partition for GNU/Linux</h4>
+<p>You need a new partition to install another Operating System. There is a program called <code class="highlighter-rouge">Disk Utility</code> in MacOS. Create a new partition and format it in anything like <code class="highlighter-rouge">xFAT</code> or <code class="highlighter-rouge">NTFS</code> or anything for now, of size as your choice (Mimimum disk space required for Ubuntu is 5GB).
+<img src="/assets/disk-partitions.png" alt="My partitions" />
+<em>In my case, I’ve created a <code class="highlighter-rouge">disk0s4</code> of size 38.6GB on my 128GB SSD.</em></p>
+
+<h4 id="2-create-another-partition-for-linux-swap-area">2. Create another partition for Linux Swap Area</h4>
+<p>So, what is swap area?</p>
+
+<p><em>The Swap Area is just fake RAM that lives on your hard drive. It is much slower than actual RAM, but is necessary in many cases to keep a computer running normally. A good rule of thumb is to have as much swap space as you do normal RAM. Learn more about swap area <a href="https://askubuntu.com/questions/508870/what-is-a-swap-area">here</a>.</em></p>
+
+<p>Create another partition for swap area. Size may be same as that of your RAM according to some <a href="https://help.ubuntu.com/community/SwapFaq">source</a>.
+<em>In my case, it is <code class="highlighter-rouge">2.5GB</code>.</em></p>
+
+<h4 id="3-create-a-bootable-device">3. Create a Bootable device</h4>
+<p>Bootable device can be any device like CD-ROM or USB.</p>
+
+<p>Download the iso image of any GNU/Linux distribution of your choice (For example <a href="https://www.ubuntu.com/download">Ubuntu</a>, <a href="https://www.parrotsec.org/download.fx">ParrotSec OS</a>). Create a bootable device (may be pendrive) using programs like <a href="https://etcher.io/">Etcher</a>, <a href="https://unetbootin.github.io/">Unetbootin</a>, <a href="https://en.wikipedia.org/wiki/Dd_(Unix)">dd</a> etc.</p>
+
+<h4 id="4-time-to-kick-start">4. Time to kick-start!</h4>
+
+<p>After you’re done with creating bootable device, restart your MacOS and keep holding <code class="highlighter-rouge">alt</code>(option) key. You’ll get something like this (shown in figure below) if you have made bootable device correctly. 
+<img src="/assets/boot-options.jpg" alt="Boot Option" />
+<em>Here, <code class="highlighter-rouge">Untitled</code> is my Mac’s default SSD and <code class="highlighter-rouge">EFI Boot</code> is bootable pendrive.</em></p>
+
+<p>Follow the installation options as per GNU/Linux distribution of your choice and when there appears options like <code class="highlighter-rouge">choose the installation disk</code>, you need to be more alert. Select options like <code class="highlighter-rouge">something else</code> or <code class="highlighter-rouge">manually choose the disk</code> and install GNU/Linux carefully on the partition you’ve created earlier. Also don’t forget to assign <code class="highlighter-rouge">swap area</code>to the latter partition. Go through each steps carefully until you get message like <code class="highlighter-rouge">installation successfully completed</code>.</p>
+
+<h4 id="5-reboot">5. Reboot</h4>
+<p>After completion of installation, you need to reboot your device. When you reboot, you may directly reach to your newly installed GNU/Linux OS but don’t worry. We need some program like <a href="https://en.wikipedia.org/wiki/REFInd">rEFind</a> that displays the boot menu during startup.</p>
+
+<ul>
+  <li>To boot your MacOS, keep holding <code class="highlighter-rouge">alt</code>(option) key during power on (start up). Select your Mac’s default SSD ( in my case, it is <code class="highlighter-rouge">Untitled</code> is shown in figure above).</li>
+  <li>In your MacOS, install rEFind <a href="https://sourceforge.net/projects/refind/">from here</a>.
+    <ol>
+      <li>
+        <ul>
+          <li>Installation is pretty simple. Unzip the rEFind file you downloaded, go to the extracted folder, you will find a file named <code class="highlighter-rouge">refind-install</code>.</li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>Drag that file(<code class="highlighter-rouge">refind-install</code>) into your <code class="highlighter-rouge">Terminal</code> and press <code class="highlighter-rouge">Enter</code>.</li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>Enter your user password when needed and then you’re done with rEFind installation.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>After this, when you restart you MacOS, you’ll get multiple menus for your multiple OS.</li>
+  <li>Navigate the OS of your choice and Enjoy!</li>
+</ul>
+
+
+  </div>
+
+  <div class="date">
+    Written on January 11, 2018
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:itssubas@gmail.com"><i class="svg-icon email"></i></a>
+<a href="https://www.facebook.com/subasnet1"><i class="svg-icon facebook"></i></a>
+
+<a href="https://github.com/itssubas"><i class="svg-icon github"></i></a>
+<a href="https://instagram.com/itssubas"><i class="svg-icon instagram"></i></a>
+
+
+
+<a href="https://www.twitter.com/itssubas"><i class="svg-icon twitter"></i></a>
+<a href="http://stackoverflow.com/users/7972809/itssubas"><i class="svg-icon stackoverflow"></i></a>
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>
